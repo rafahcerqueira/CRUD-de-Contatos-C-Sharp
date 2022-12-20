@@ -1,0 +1,48 @@
+html {
+  font-size: 14px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background: url('../Imagens/background.jpg') repeat center center fixed;
+}
+
+.field-validation-error {
+    color: #e01d1d;
+    font-size: small;
+}
+
+.close-alert{
+    font-size: 0.8rem;
+    position: relative;
+    margin: 0 10px;
+    border-radius: 5rem;
+}
+
+.position-alert {
+    position: fixed;
+    left: auto;
+    top: auto;
+    right: 1px;
+    bottom: 1px;
+    z-index: 10;
+}
+
+.table-list{
+    padding: 1rem 0rem;
+}
+
+.div-listagem{
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}

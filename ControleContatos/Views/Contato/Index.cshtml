@@ -1,0 +1,72 @@
+﻿@model List<ContatoModel>
+@{
+    ViewData["Title"] = "Listagem de Contatos";
+}
+
+@if(TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success position-alert" role="alert">
+        @TempData["MensagemSucesso"]
+        <button type="button" class="btn btn-outline-danger opacity-75 btn-sm close-alert" aria-label="Close">X</button>
+    </div>
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger position-alert" role="alert">
+        @TempData["MensagemErro"]
+        <button type="button" class="btn btn-outline-danger opacity-75 btn-sm close-alert" aria-label="Close">X</button>
+    </div>
+}
+
+<br />
+
+<div class="mt-lg-2 text-center box-shadow bg-light bg-opacity-25 shadow-lg rounded div-listagem">
+
+    <h1 class="text-dark pt-sm-2 list-title">Listagem de Contatos</h1>
+
+    <br />
+
+    <table class="table table-striped table-bordered table-list" id="table-contatos" style="width:100%">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Celular</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+            @if(Model != null && Model.Any())
+            {
+                foreach (ContatoModel contato in Model)
+                {
+                    <tr>
+                        <th scope="row">@contato.Id</th>
+                        <td>@contato.Nome</td>
+                        <td>@contato.Email</td>
+                        <td>@contato.Celular</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a role="button" class="btn btn-outline-primary" asp-route-id="@contato.Id" asp-controller="Contato" asp-action="EditarContato">Editar</a>
+                                <a role="button" class="btn btn-outline-danger" asp-route-id="@contato.Id" asp-controller="Contato" asp-action="ApagarConfirmacao">Deletar</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr class="odd"><td valign="top" colspan="5">Nenhum contato encontrado!</td></tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+<br />
+
+<div class="d-flex btn-add">
+    <a class="btn btn-success" role="button" asp-controller="Contato" asp-action="CriarContato">Adicionar Contato</a>
+</div>
