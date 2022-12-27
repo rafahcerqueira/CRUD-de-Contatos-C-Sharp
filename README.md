@@ -17,8 +17,7 @@ Projeto CRUD que realiza o controle de contatos (Create, read, update, delete).
 
 ## 🎯 Objetivo:
 
-Projeto Freelancer desenvolvido em React.JS para uma loja de roupas femininas. Com o intuito de adquirir experiências com sites profissionais que vão ser utilizados pelos clientes.
-
+Projeto CRUD de agenda de contatos desenvolvido com intuito de realizar estudos MVC / DOTNET / C#.
 
 ### 📞 Contato:
 
